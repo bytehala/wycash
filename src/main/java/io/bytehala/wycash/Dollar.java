@@ -2,7 +2,7 @@ package io.bytehala.wycash;
 
 public class Dollar {
 
-    public int amount;
+    private int amount;
 
     public Dollar(int i) {
         this.amount = i;
