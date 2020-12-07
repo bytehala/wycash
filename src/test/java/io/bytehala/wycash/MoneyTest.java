@@ -2,7 +2,7 @@ package io.bytehala.wycash;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 
 public class MoneyTest {
@@ -14,5 +14,12 @@ public class MoneyTest {
         assertEquals(10, product.amount);
         product = five.times(3);
         assertEquals(15, product.amount);
+    }
+
+    @Test
+    public void testEquality() {
+        // Equality via triangulation
+        assertTrue(new Dollar(5).equals(new Dollar(5)));
+        assertFalse(new Dollar(5).equals(new Dollar(6)));
     }
 }
