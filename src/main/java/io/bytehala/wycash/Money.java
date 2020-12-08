@@ -1,6 +1,6 @@
 package io.bytehala.wycash;
 
-public abstract class Money {
+public class Money {
 
     protected String currency;
     protected int amount;
@@ -21,10 +21,12 @@ public abstract class Money {
     @Override
     public boolean equals(Object o) {
         Money d = (Money) o;
-        return d.amount == this.amount && getClass().equals(o.getClass());
+        return d.amount == this.amount && currency.equals(d.currency());
     }
 
-    public abstract Money times(int multiplier);
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
+    }
 
     public String currency() {
         return this.currency;
