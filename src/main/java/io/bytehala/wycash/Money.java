@@ -1,6 +1,6 @@
 package io.bytehala.wycash;
 
-public class Money {
+public class Money implements Expression {
 
     protected String currency;
     protected int amount;
@@ -30,5 +30,9 @@ public class Money {
 
     public String currency() {
         return this.currency;
+    }
+
+    public Expression plus(Money addend) {
+        return new Money(amount + addend.amount, currency);
     }
 }
