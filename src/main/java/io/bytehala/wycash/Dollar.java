@@ -2,11 +2,12 @@ package io.bytehala.wycash;
 
 public class Dollar extends Money {
 
-    public Dollar(int i) {
-        this.amount = i;
+    public Dollar(int amount, String currency) {
+        super(amount, currency);
     }
 
     public Money times(int i) {
-        return new Dollar(amount * i);
+        return Money.dollar(amount * i);
     }
+
 }
